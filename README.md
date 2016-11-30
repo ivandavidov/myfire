@@ -130,6 +130,20 @@ The above command has immediate effect and the specified IP will have access to 
 
 ## Important notes
 
-By default neither ``iptables``, nor ``ipset`` persist their configurations. MyFire doesn't do that for you either. This means that even though you have MyFire up and running, once you restart your machine, all firewall rules will be lost. In this case you shoud setup MyFire again starting with ``myfire-reset``, etc.
+By default neither ``iptables``, nor ``ipset`` persist their configurations. MyFire doesn't do that for you either. This means that even though you have MyFire up and running, once you restart your machine, all firewall rules will be lost. In this case you shoud setup MyFire again like this:
 
-It's up to you to find appropriate persisting mechanism for your firewall. Both iptables and ipset provide such persistence functionality but the actual usage differs depending on your Linux distribution.
+```
+myfire-reset
+myfire-process badips
+myfire-process torips
+myfire-process blackips
+myfire-process whiteips
+```
+
+The ``myfire-process`` command loads the IP addresses for the respective service in the firewall:
+* ``badips`` - IPs reported by [badips.com](http://badips.com).
+* ``torips`` - Tor exit nodes.
+* ``blackips`` - All IPs known to MyFire that have been provided via the ``myfire-black`` command.
+* ``whiteips`` - All IPs known to MyFire that have been provided via the ``myfire-white`` command.
+
+It's up to you to find appropriate persisting mechanism for your firewall. Both iptables and ipset provide such persistence functionality but the actual usage differs depending on your Linux distribution. If you do that, then obviously you don't need to go through the MyFire setup process after machine reboot.
