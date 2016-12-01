@@ -1,8 +1,8 @@
 # MyFire
 
-MyFire is really simple (and I mean really simple) firewall system for Linux machines. The firewall itself is based on ``iptables`` and ``ipset``. The default behavior of the firewall is to drop all incoming traffic except on port 22 (this is the default SSH port). The idea is to secure the system from the outer world and let the administrator does his job remotely via SSH.
+MyFire is really simple (and I mean really simple) firewall system for Linux machines. The firewall itself is based on ``iptables`` and ``ipset``. The default behavior of the firewall is to drop all incoming traffic on the ``eth0`` network interface except for port 22 (this is the default SSH port). The idea is to secure the system from the outer world and let the administrator does his job remotely via SSH.
 
-One interesting MyFire feature is that it can protect your machine from blacklisted IP addresses reported by [badips.com](http://badips.com) and from [Tor](http://torproject.org) exit nodes.
+One interesting MyFire feature is that it can protect your machine from blacklisted IP addresses reported by [badIPs](http://badips.com) and from [Tor](http://torproject.org) exit nodes.
 
 Installation, setup and protection from potentially dangerous IPs is achieved with just 6 commands:
 
@@ -28,13 +28,13 @@ Don't blame MyFire or me personally if you get hacked. Your security is entirely
 
 ## Installation
 
-Download the scripts somewhere on your local machine and execute the following command:
+Download the scripts somewhere on your local machine. Go through the scripts and check the variable s at teh beginning of each script. Ensure that these variables are correct for your system and then execute the following command:
 
 ```
 bash myfire-install.sh
 ```
 
-If you'd like, you can make the installer script executable and run it directly:
+Another installation option is to make the installer script executable and run it directly:
 
 ```
 chmod +x myfire-install.sh
