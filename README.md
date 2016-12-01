@@ -142,6 +142,8 @@ myfire-process blackips
 myfire-process whiteips
 ```
 
+The above chain of commands will (1) reset the firewall and (2) load the firewall with the existing IPs which have been stored in the database files in ``/var/lib/myfire``. These database files are updated each time you use ``myfire-download-*``, ``myfire-black`` or ``myfire-white``.
+
 The ``myfire-process`` command loads the IP addresses for the respective service in the firewall:
 * ``badips`` - IPs reported by [badIPs](http://badips.com).
 * ``torips`` - Tor exit nodes.
@@ -149,3 +151,5 @@ The ``myfire-process`` command loads the IP addresses for the respective service
 * ``whiteips`` - All IPs known to MyFire that have been provided via the ``myfire-white`` command.
 
 It's up to you to find appropriate persisting mechanism for your firewall. Both iptables and ipset provide such persistence functionality but the actual usage differs depending on your Linux distribution. If you do that, then obviously you don't need to go through the MyFire setup process after machine reboot.
+
+And last but not least - you can use the ``myfire-uninstall`` command to uninstall MyFire from your system. Note that this will remove MyFire from your system but this will leave the ``iptables`` and ``ipset`` configurations intact, so your system will still be protected.
