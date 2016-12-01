@@ -23,6 +23,7 @@ unlink /usr/sbin/myfire-download-torips >/dev/null 2>&1
 unlink /usr/sbin/myfire-process >/dev/null 2>&1
 unlink /usr/sbin/myfire-report-badip >/dev/null 2>&1
 unlink /usr/sbin/myfire-reset >/dev/null 2>&1
+unlink /usr/sbin/myfire-uninstall >/dev/null 2>&1
 unlink /usr/sbin/myfire-white >/dev/null 2>&1
 echo "$(date) - Removed symbolic links from  directory '/usr/sbin'." | tee -a /var/log/myfire.log
 
