@@ -1,6 +1,6 @@
 # MyFire
 
-MyFire is really simple (and I mean really simple) firewall system for Linux machines. The firewall itself is based on ``iptables`` and ``ipset``. The default behavior of the firewall is to drop all incoming traffic on the ``eth0`` network interface except for port 22 (this is the default SSH port). The idea is to secure the system from the outer world and let the administrator does his job remotely via SSH.
+MyFire is a simple (yet very reliable) firewall system for Linux machines. The firewall itself is based on ``iptables`` and ``ipset``. The default behavior of the firewall is to drop all incoming traffic on the ``eth0`` network interface except for port 22 (this is the default SSH port). The idea is to secure the system from the outer world and let the administrator does his job remotely via SSH.
 
 One interesting MyFire feature is that it can protect your machine from blacklisted IP addresses reported by [badIPs](http://badips.com) and from [Tor](http://torproject.org) exit nodes.
 
@@ -28,7 +28,7 @@ Don't blame MyFire or me personally if you get hacked. Your security is entirely
 
 ## Installation
 
-Download the scripts somewhere on your local machine. Go through the scripts and check the variable s at teh beginning of each script. Ensure that these variables are correct for your system and then execute the following command:
+[Download the latest scripts](https://github.com/ivandavidov/myfire/archive/master.zip) somewhere on your local machine. Go through the scripts and check the variables at the beginning of each script. Ensure that these variables are correct for your system and then execute the following command:
 
 ```
 bash myfire-install.sh
@@ -47,6 +47,8 @@ This is what happens when you run the installer:
 * Symbolic links ``myfire-*`` are created in ``/usr/sbin``.
 * IP database files are created in ``/var/lib/myfire``.
 * Log file ``/var/log/myfire.log`` is generated.
+
+All ``myfire-*`` commands require root privileges or root elevation via ``sudo``. The same goes for the installer script.
 
 ## Initial Setup
 
