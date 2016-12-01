@@ -152,6 +152,6 @@ The ``myfire-process`` command loads the IP addresses for the respective service
 * ``blackips`` - All IPs known to MyFire that have been provided via the ``myfire-black`` command.
 * ``whiteips`` - All IPs known to MyFire that have been provided via the ``myfire-white`` command.
 
-It's up to you to find appropriate persisting mechanism for your firewall. Both iptables and ipset provide such persistence functionality but the actual usage differs depending on your Linux distribution. If you do that, then obviously you don't need to go through the MyFire setup process after machine reboot.
+It's up to you to find appropriate persisting mechanism for your firewall. Both ``iptables`` and ``ipset`` provide such persistence functionality but the actual usage differs depending on your Linux distribution. If you manage to do that, then obviously you don't need to go through the MyFire setup process after machine reboot.
 
 And last but not least - you can use the ``myfire-uninstall`` command to uninstall MyFire from your system. Note that this will remove MyFire from your system but this will leave the ``iptables`` and ``ipset`` configurations intact, so your system will still be protected.
