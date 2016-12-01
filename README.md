@@ -24,7 +24,7 @@ myfire-process torips
 
 ## Disclaimer
 
-If you get hacked, please don't blame MyFire or me personally. Your security is entirely your responsibility - always remember that!
+Don't blame MyFire or me personally if you get hacked. Your security is entirely your responsibility - always remember that!
 
 ## Installation
 
@@ -61,7 +61,7 @@ This is what happens when you execute the above command:
 * **VERY IMPORTANT** - All existing ``iptables`` rules are discarded.
 * New ``iptables`` rules are put in place and all incoming traffic is discarded except for traffic on port 22.
 
-You can change the default behavior of the firewall reset functionality by editing the file ``/opt/myfire/myfire-reset.sh``. For example, you can allow more ports (e.g. 80 and 443 for http/https access). You can always use the ``iptables`` command to modify your firewall behavior after you perform the reset but the chances are that since you are reading this, most probably you are looking fo fast and simple way to setup a basic firewall - hence the explanation where you should put your additional port configurations.
+You can change the default behavior of the firewall reset functionality by editing the file ``/opt/myfire/myfire-reset.sh``. For example, you can allow more ports (e.g. 80 and 443 for http/https access). You can always use the ``iptables`` command to modify your firewall behavior after you perform the reset but the chances are that since you are reading this, most probably you are looking for fast and simple way to setup a basic firewall - hence the explanation where you should put your additional port configurations.
 
 ## Protection from bad IPs
 
