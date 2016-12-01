@@ -11,7 +11,7 @@ input_tmp="$(echo $_input).tmp"
 cd /var/lib/myfire
 
 echo "$(date) - Downloading IP list with Tor exit nodes in temporary file '/var/lib/myfire/$input_tmp'." | tee -a /var/log/myfire.log
-wget -qO- https://www.dan.me.uk/torlist/?exit  > $input_tmp || { echo "$(date) - $0: Unable to download ip list." | tee -a /var/log/myfire.log; exit 1; }
+wget -qO- https://www.dan.me.uk/torlist/?exit  > $input_tmp || { echo "$(date) - $0: Unable to download IP list." | tee -a /var/log/myfire.log; exit 1; }
 
 echo "$(date) - Delete old IPs list '/var/lib/myfire/$input'." | tee -a /var/log/myfire.log
 rm -f $input
