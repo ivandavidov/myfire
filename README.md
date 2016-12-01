@@ -65,7 +65,7 @@ You can change the default behavior of the firewall reset functionality by editi
 
 ## Protection from bad IPs
 
-MyFire can protect your machine from blacklisted IPs reported by [badips.com](http://badips.com). First we obtain the most recent blacklisted IPs:
+MyFire can protect your machine from blacklisted IPs reported by [badIPs](http://badips.com). First we obtain the most recent blacklisted IPs:
 
 ```
 myfire-download-badips
@@ -109,7 +109,7 @@ Its convenient to repeat this process regularly, e.g. every two hours. You can s
 22 */2 * * * /bin/bash /opt/myfire/myfire-process.sh torips >/dev/null 2>&1
 ```
 
-The above crontab configuration will trigger the download of blacklisted IPs every 2 hours at minute 19 and at minute 22 these IPs will be loaded in MyFire.
+The above crontab configuration will trigger the download of Tor exit node IPs every 2 hours at minute 19 and at minute 22 these IPs will be loaded in MyFire.
 
 ## MyFire blacklist functionality
 
@@ -143,7 +143,7 @@ myfire-process whiteips
 ```
 
 The ``myfire-process`` command loads the IP addresses for the respective service in the firewall:
-* ``badips`` - IPs reported by [badips.com](http://badips.com).
+* ``badips`` - IPs reported by [badIPs](http://badips.com).
 * ``torips`` - Tor exit nodes.
 * ``blackips`` - All IPs known to MyFire that have been provided via the ``myfire-black`` command.
 * ``whiteips`` - All IPs known to MyFire that have been provided via the ``myfire-white`` command.
