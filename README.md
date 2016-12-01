@@ -88,11 +88,13 @@ The above crontab configuration will trigger the download of blacklisted IPs at 
 
 ## Protection from Tor exit nodes
 
-MyFire can protect your machine from Tor exit node IPs. This means that your machine will not be reachable through the Tor network 99% of the time (due to the dynamic nature of Tor there is never 100% guarantee) First we obtain the most re Tor exit node IPs:
+MyFire can protect your machine from Tor exit node IPs. This means that your machine will not be reachable through the Tor network 99% of the time (due to the dynamic nature of Tor there is never 100% guarantee) First we obtain the most recent Tor exit node IPs:
 
 ```
 myfire-download-torips
 ```
+
+**Important note** - don't execute the above command more often than 30 minutes or you risk to get banned from the service which provides the Tor exit nodes list. It is safe to execute this command once every hour.
 
 Then we load these IPs in MyFire:
 
