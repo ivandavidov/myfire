@@ -6,7 +6,7 @@ if [ ! "$(id -u)" = "0" ] ; then
 fi
 
 input=torips.db
-input_tmp="$(echo $_input).tmp"
+input_tmp="$(echo $input).tmp"
 
 cd /var/lib/myfire
 

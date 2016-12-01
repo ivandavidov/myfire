@@ -50,7 +50,7 @@ ip_found_db=$(grep $ip_esc $input)
 
 if [ "$ip_found_in_set" = "$custset" -a "$ip_found_db" = "" ] ; then
   echo $ip >> $input
-  echo "$(date) - IP address $ip was added to the database '$input'." | tee -a /var/log/myfire.log
+  echo "$(date) - IP address $ip was added to database file '/var/lib/myfire/$input'." | tee -a /var/log/myfire.log
 fi
 
 exit 0
