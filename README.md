@@ -17,7 +17,7 @@ myfire-reset
 myfire-download-badips
 myfire-process badips
 
-Protection from Tor exit nodes
+# Protection from Tor exit nodes
 myfire-download-torips
 myfire-process torips
 ```
