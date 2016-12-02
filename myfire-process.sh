@@ -26,13 +26,15 @@ fi
 echo "$(date) - Create temporary ipset '$tname'." | tee -a /var/log/myfire.log
 $ips create $tname hash:ip timeout 0 
 
-echo "$(date) - Appending IPs to temporary ipset '$tname'. This can take a while..." | tee -a /var/log/myfire.log
-for ip in `cat $input`
+numips=$(cat $input | wc -l)
+
+echo "$(date) - Appending $numips IPs to temporary ipset '$tname'. This can take a while..." | tee -a /var/log/myfire.log
+for ip in $(cat $input)
 do
   $ips add $tname $ip
 done
 
-echo "$(date) - Fill new ipset '$sname' with IPs." | tee -a /var/log/myfire.log
+echo "$(date) - Fill new ipset '$sname' with $numips IPs." | tee -a /var/log/myfire.log
 $ips flush $sname
 $ips swap $tname $sname
 
