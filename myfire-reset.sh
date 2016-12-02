@@ -42,14 +42,21 @@ $ips create whiteips hash:ip timeout 0
 
 echo "$(date) - Add default firewall rules." | tee -a /var/log/myfire.log
 
-$ipt -A INPUT -i $eth -m state --state INVALID -j DROP
 $ipt -A INPUT -i lo -j ACCEPT
+$ipt -A INPUT -i $eth -m state --state INVALID -j DROP
 $ipt -A INPUT -i $eth -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
 $ipt -A INPUT -i $eth -m set --match-set whiteips src -j ACCEPT
 $ipt -A INPUT -i $eth -m set --match-set torips src -j DROP
 $ipt -A INPUT -i $eth -m set --match-set badips src -j DROP
 $ipt -A INPUT -i $eth -m set --match-set blackips src -j DROP
+
+# Put your own 'iptables' rules here. The default rule
+# below allows SSH connections. You can copy/paste this
+# rule and change the port from 22 to 80 in order to
+# enable incoming HTTP traffic.
 $ipt -A INPUT -i $eth -p tcp -m tcp --dport 22 -j ACCEPT
+
+# In the end we put rule which discards all other traffic.
 $ipt -A INPUT -i $eth -j DROP
 
 echo "$(date) - Touch default database files." | tee -a /var/log/myfire.log
