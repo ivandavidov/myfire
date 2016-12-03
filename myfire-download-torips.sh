@@ -5,6 +5,16 @@ if [ ! "$(id -u)" = "0" ] ; then
   exit 1
 fi
 
+args="$@"
+
+if [ "$args" = "" ] ; then
+  cmd="$0"
+else
+  cmd="$0 $args"
+fi
+
+echo "$(date) - *** '$cmd' BEGIN ***" | tee -a /var/log/myfire.log
+
 input=torips.db
 input_tmp="$(echo $input).tmp"
 
@@ -19,5 +29,5 @@ rm -f $input
 mv $input_tmp $input
 echo "$(date) - IP database '/var/lib/myfire/$input' has been prepared." | tee -a /var/log/myfire.log
 
-exit 0
+echo "$(date) - *** '$cmd' END ***" | tee -a /var/log/myfire.log
 

@@ -10,6 +10,16 @@ if [ ! "$(id -u)" = "0" ] ; then
   exit 1
 fi
 
+args="$@"
+
+if [ "$args" = "" ] ; then
+  cmd="$0"
+else
+  cmd="$0 $args"
+fi
+
+echo "$(date) - *** '$cmd' BEGIN ***" | tee -a /var/log/myfire.log
+
 # Failsafe - die if /sbin/iptables not found 
 [ ! -x "$ipt" ] && { echo "$(date) - $0: \"${ipt}\" command not found." | tee -a /var/log/myfire.log; exit 1; }
 
@@ -67,7 +77,5 @@ do
   touch $dbfile
 done
 
-echo "$(date) - Done." | tee -a /var/log/myfire.log
-
-exit 0
+echo "$(date) - *** '$cmd' END ***" | tee -a /var/log/myfire.log
 

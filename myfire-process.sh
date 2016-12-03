@@ -9,6 +9,16 @@ if [ "$1" = "" ] ; then
   echo "You need to provide IP set as parameter."
   exit 1
 fi
+
+args="$@"
+
+if [ "$args" = "" ] ; then
+  cmd="$0"
+else
+  cmd="$0 $args"
+fi
+
+echo "$(date) - *** '$cmd' BEGIN ***" | tee -a /var/log/myfire.log
  
 ipt=/sbin/iptables
 ips=/sbin/ipset
@@ -42,6 +52,5 @@ echo "$(date) - Delete temporary ipset '$tname'." | tee -a /var/log/myfire.log
 $ips flush $tname
 $ips destroy $tname
 
-echo "$(date) - Done." | tee -a /var/log/myfire.log
-exit 0
+echo "$(date) - *** '$cmd' END ***" | tee -a /var/log/myfire.log
 

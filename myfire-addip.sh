@@ -19,6 +19,16 @@ if [ "$2" = "" ] ; then
   exit 1
 fi
 
+args="$@"
+
+if [ "$args" = "" ] ; then
+  cmd="$0"
+else
+  cmd="$0 $args"
+fi
+
+echo "$(date) - *** '$cmd' BEGIN ***" | tee -a /var/log/myfire.log
+
 custset=$1
 input="$(echo $custset).db"
 
@@ -53,5 +63,5 @@ if [ "$ip_found_in_set" = "$custset" -a "$ip_found_db" = "" ] ; then
   echo "$(date) - IP address $ip was added to database file '/var/lib/myfire/$input'." | tee -a /var/log/myfire.log
 fi
 
-exit 0
+echo "$(date) - *** '$cmd' END ***" | tee -a /var/log/myfire.log
 

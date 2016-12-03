@@ -10,6 +10,16 @@ if [ "$1" = "" ] ; then
   exit 1
 fi
 
+args="$@"
+
+if [ "$args" = "" ] ; then
+  cmd="$0"
+else
+  cmd="$0 $args"
+fi
+
+echo "$(date) - *** '$cmd' BEGIN ***" | tee -a /var/log/myfire.log
+
 SOURCE="${BASH_SOURCE[0]}"
 while [ -h "$SOURCE" ]; do
   DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
@@ -20,6 +30,7 @@ DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 
 cd $DIR
 
-echo "$(date) - Executing 'myfire-addip whiteips $1'." | tee -a /var/log/myfire.log
-./myfire-addip.sh whiteips $1
+$(pwd)/myfire-addip.sh whiteips $1
+
+echo "$(date) - *** '$cmd' END ***" | tee -a /var/log/myfire.log
 

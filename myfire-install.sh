@@ -5,8 +5,18 @@ if [ ! "$(id -u)" = "0" ] ; then
   exit 1
 fi
 
+args="$@"
+
+if [ "$args" = "" ] ; then
+  cmd="$0"
+else
+  cmd="$0 $args"
+fi
+
+echo "$(date) - *** '$cmd' BEGIN ***" | tee -a /var/log/myfire.log
+
 SOURCE="${BASH_SOURCE[0]}"
-while [ -h "$SOURCE" ]; do
+while [ -h "$SOURCE" ] ; do
   DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
   SOURCE="$(readlink "$SOURCE")"
   [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE"
@@ -49,6 +59,8 @@ unlink /usr/sbin/myfire-download-badips >/dev/null 2>&1
 ln -s /opt/myfire/myfire-download-badips.sh /usr/sbin/myfire-download-badips
 unlink /usr/sbin/myfire-download-torips >/dev/null 2>&1
 ln -s /opt/myfire/myfire-download-torips.sh /usr/sbin/myfire-download-torips
+unlink /usr/sbin/myfire-green >/dev/null 2>&1
+ln -s /opt/myfire/myfire-green.sh /usr/sbin/myfire-green
 unlink /usr/sbin/myfire-process >/dev/null 2>&1
 ln -s /opt/myfire/myfire-process.sh /usr/sbin/myfire-process
 unlink /usr/sbin/myfire-report-badip >/dev/null 2>&1
@@ -62,4 +74,6 @@ ln -s /opt/myfire/myfire-white.sh /usr/sbin/myfire-white
 echo "$(date) - Added symbolic links in directory '/usr/sbin'." | tee -a /var/log/myfire.log
 echo "$(date) - The log file is '/var/log/myfire.log'." | tee -a /var/log/myfire.log
 echo "$(date) - MyFire version '0.1' has been installed." | tee -a /var/log/myfire.log
+
+echo "$(date) - *** '$cmd' END ***" | tee -a /var/log/myfire.log
 
