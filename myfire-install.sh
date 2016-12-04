@@ -61,6 +61,8 @@ unlink /usr/sbin/myfire-download-torips >/dev/null 2>&1
 ln -s /opt/myfire/myfire-download-torips.sh /usr/sbin/myfire-download-torips
 unlink /usr/sbin/myfire-examine-auth >/dev/null 2>&1
 ln -s /opt/myfire/myfire-examine-auth.sh /usr/sbin/myfire-examine-auth
+unlink /usr/sbin/myfire-examine-auth >/dev/null 2>&1
+ln -s /opt/myfire/myfire-examine-auth.sh /usr/sbin/myfire-examine-auth
 unlink /usr/sbin/myfire-green >/dev/null 2>&1
 ln -s /opt/myfire/myfire-green.sh /usr/sbin/myfire-green
 unlink /usr/sbin/myfire-process >/dev/null 2>&1
