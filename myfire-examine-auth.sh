@@ -34,7 +34,11 @@ do
   cmd2="$cmd2$ip"
 done
 
-/opt/myfire/myfire-addip.sh blackips $cmd2
+if [ ! "$cmd2" = "" ] ; then
+  /opt/myfire/myfire-addip.sh blackips $cmd2
+else
+  echo "$(date) - There are no IPs in the log file." | tee -a /var/log/myfire.log
+fi
 
 echo "$(date) - *** '$cmd' END ***" | tee -a /var/log/myfire.log
 
