@@ -67,6 +67,8 @@ unlink /usr/sbin/myfire-green >/dev/null 2>&1
 ln -s /opt/myfire/myfire-green.sh /usr/sbin/myfire-green
 unlink /usr/sbin/myfire-process >/dev/null 2>&1
 ln -s /opt/myfire/myfire-process.sh /usr/sbin/myfire-process
+unlink /usr/sbin/myfire-rebuild >/dev/null 2>&1
+ln -s /opt/myfire/myfire-rebuild.sh /usr/sbin/myfire-rebuild
 unlink /usr/sbin/myfire-report-badip >/dev/null 2>&1
 ln -s /opt/myfire/myfire-report-badip.sh /usr/sbin/myfire-report-badip
 unlink /usr/sbin/myfire-reset >/dev/null 2>&1
