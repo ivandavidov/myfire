@@ -18,7 +18,7 @@ echo "$(date) - *** '$cmd' BEGIN ***" | tee -a /var/log/myfire.log
 month=$(date | awk '{print $2}')
 day=$(date | awk '{print $3}')
 
-ips=$(cat /var/log/auth.log | egrep "^$month[ ]{1,2}[$day]" | grep -oE '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | awk '!seen[$0]++')
+ips=$(cat /var/log/auth.log | egrep "^$month[ ]{1,2}[$day]" | grep -oE '[1-9][0-9]{0,2}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | awk '!seen[$0]++')
 
 cmd2=
 first=true
