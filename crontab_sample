@@ -1,4 +1,6 @@
-# This is sample 'crontab' configuration which
+# This is sample 'crontab' configuration which processes 'badips' once a day
+# and 'torips' every 2 hours. In addition, the '/var/log/auth.log' file is
+# examined every hour and all IPs there are added to 'blackips'.
 
 # Bad IPs
 35 1 * * * /bin/bash /opt/myfire/myfire-download-badips.sh >/dev/null 2>&1
