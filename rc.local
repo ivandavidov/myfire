@@ -1,0 +1,2 @@
+# Sample entry for '/etc/rc.local'
+/bin/bash /opt/myfire/myfire-rebuild.sh &
