@@ -158,5 +158,6 @@ And last but not least - you can use the ``myfire-uninstall`` command to uninsta
 
 ## Additional functionalities
 
+* ``myfire`` - simple wrapper command which invokes the corresponding script passed as first argument. For example ``myfire green 1.2.3.4`` is the same as invoking ``myfire-green 1.2.3.4``.
 * ``myfire-green`` - remove IP address/range from all DB files. The existing firewall rules will not be changed.
 * ``myfire-rebuild`` - simple wrapper for full firewall reset and initial DB processing. The existing DB files are not updated.
