@@ -33,4 +33,3 @@ mv $input_tmp $input
 echo "$(date) - IP database '/var/lib/myfire/$input' has been prepared." | tee -a /var/log/myfire.log
 
 echo "$(date) - *** '$cmd' END ***" | tee -a /var/log/myfire.log
-

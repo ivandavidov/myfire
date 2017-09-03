@@ -77,9 +77,10 @@ unlink /usr/sbin/myfire-uninstall >/dev/null 2>&1
 ln -s /opt/myfire/myfire-uninstall.sh /usr/sbin/myfire-uninstall
 unlink /usr/sbin/myfire-white >/dev/null 2>&1
 ln -s /opt/myfire/myfire-white.sh /usr/sbin/myfire-white
+unlink /usr/sbin/myfire >/dev/null 2>&1
+ln -s /opt/myfire/myfire.sh /usr/sbin/myfire
 echo "$(date) - Added symbolic links in directory '/usr/sbin'." | tee -a /var/log/myfire.log
 echo "$(date) - The log file is '/var/log/myfire.log'." | tee -a /var/log/myfire.log
 echo "$(date) - MyFire version '0.1' has been installed." | tee -a /var/log/myfire.log
 
 echo "$(date) - *** '$cmd' END ***" | tee -a /var/log/myfire.log
-

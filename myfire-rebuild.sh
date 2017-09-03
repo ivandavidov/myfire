@@ -25,4 +25,3 @@ do
 done
 
 echo "$(date) - *** '$cmd' END ***" | tee -a /var/log/myfire.log
-

@@ -28,6 +28,7 @@ unlink /usr/sbin/myfire-report-badip >/dev/null 2>&1
 unlink /usr/sbin/myfire-reset >/dev/null 2>&1
 unlink /usr/sbin/myfire-uninstall >/dev/null 2>&1
 unlink /usr/sbin/myfire-white >/dev/null 2>&1
+unlink /usr/sbin/myfire >/dev/null 2>&1
 echo "$(date) - Removed symbolic links from  directory '/usr/sbin'." | tee -a /var/log/myfire.log
 
 rm -rf /var/lib/myfire
@@ -38,4 +39,3 @@ echo "$(date) - You need to delete manually the log file '/var/log/myfire.log'."
 echo "$(date) - MyFire version '0.1' has been uninstalled." | tee -a /var/log/myfire.log
 
 echo "$(date) - *** '$cmd' END ***" | tee -a /var/log/myfire.log
-

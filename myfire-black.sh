@@ -33,4 +33,3 @@ cd $DIR
 $(pwd)/myfire-addip.sh blackips $1
 
 echo "$(date) - *** '$cmd' END ***" | tee -a /var/log/myfire.log
-

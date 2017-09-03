@@ -50,4 +50,3 @@ done
 echo "$(date) - IP address $ip has been removed from all database files." | tee -a /var/log/myfire.log
 
 echo "$(date) - *** '$cmd' END ***" | tee -a /var/log/myfire.log
-

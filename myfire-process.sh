@@ -53,4 +53,3 @@ $ips flush $tname
 $ips destroy $tname
 
 echo "$(date) - *** '$cmd' END ***" | tee -a /var/log/myfire.log
-

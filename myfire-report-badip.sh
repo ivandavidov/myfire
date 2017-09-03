@@ -29,4 +29,3 @@ fi
 wget https://www.badips.com/add/$1/$2
 
 echo "$(date) - *** '$cmd' END ***" | tee -a /var/log/myfire.log
-
