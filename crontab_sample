@@ -1,0 +1,12 @@
+# This is sample 'crontab' configuration which
+
+# Bad IPs
+35 1 * * * /bin/bash /opt/myfire/myfire-download-badips.sh >/dev/null 2>&1
+45 1 * * * /bin/bash /opt/myfire/myfire-process.sh badips >/dev/null 2>&1
+
+# Tor IPs
+19 */2 * * * /bin/bash /opt/myfire/myfire-download-torips.sh >/dev/null 2>&1
+22 */2 * * * /bin/bash /opt/myfire/myfire-process.sh torips >/dev/null 2>&1
+
+# SSH IPs
+59 * * * * /bin/bash /opt/myfire/myfire-examine-auth.sh >/dev/null 2>&1
