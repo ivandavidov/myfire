@@ -22,6 +22,7 @@ unlink /usr/sbin/myfire-download-badips >/dev/null 2>&1
 unlink /usr/sbin/myfire-download-torips >/dev/null 2>&1
 unlink /usr/sbin/myfire-examine-auth >/dev/null 2>&1
 unlink /usr/sbin/myfire-green >/dev/null 2>&1
+unlink /usr/sbin/myfire-list >/dev/null 2>&1
 unlink /usr/sbin/myfire-process >/dev/null 2>&1
 unlink /usr/sbin/myfire-rebuild >/dev/null 2>&1
 unlink /usr/sbin/myfire-report-badip >/dev/null 2>&1

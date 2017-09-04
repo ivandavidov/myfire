@@ -65,6 +65,8 @@ unlink /usr/sbin/myfire-examine-auth >/dev/null 2>&1
 ln -s /opt/myfire/myfire-examine-auth.sh /usr/sbin/myfire-examine-auth
 unlink /usr/sbin/myfire-green >/dev/null 2>&1
 ln -s /opt/myfire/myfire-green.sh /usr/sbin/myfire-green
+unlink /usr/sbin/myfire-list >/dev/null 2>&1
+ln -s /opt/myfire/myfire-list.sh /usr/sbin/myfire-list
 unlink /usr/sbin/myfire-process >/dev/null 2>&1
 ln -s /opt/myfire/myfire-process.sh /usr/sbin/myfire-process
 unlink /usr/sbin/myfire-rebuild >/dev/null 2>&1
